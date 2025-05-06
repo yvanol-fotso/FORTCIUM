@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
 import './SignUp.css'; // Import the CSS file
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+
+
+
 
 function SignUp() {
   const [email, setEmail] = useState('');
@@ -32,10 +37,12 @@ function SignUp() {
   return (
     <div className="sign-up-container">
       <h2 className="sign-up-heading">Create an account</h2>
-      <p className="sign-up-subheading">Connect with your friends today!</p>
+      <label className="sign-up-subheading">Connect with your friends today!</label>
       <div className="logo-container">
         {/* You would replace this with your actual logo component or image */}
-        <div className="logo-placeholder">FORTICIUM</div>
+        <div className="logo">
+            <img src='/img12.jpeg' alt='img'/>
+        </div>
       </div>
       <form onSubmit={handleSubmit} className="sign-up-form">
         <div className="input-group">
@@ -63,14 +70,14 @@ function SignUp() {
         </div>
         <div className="input-group">
           <label htmlFor="password" className="input-label">Password</label>
-          <div className="password-input-container">
+          <div className="">
             <input
               type="password"
               id="password"
               value={password}
               onChange={handlePasswordChange}
               placeholder="Choose a strong password"
-              className="password-input"
+              className="form-input"
               required
             />
             {/* You might add a toggle visibility icon here */}
@@ -95,21 +102,29 @@ function SignUp() {
         </button>
       </form>
       <div className="social-login">
+      <div className="social-divider">
         <hr className="divider" />
-        <p className="social-text">Or sign up with</p>
-        <div className="social-buttons">
-          {/* You would replace these with your actual social login components or icons */}
-          <button type="button" className="social-button">
-            <span className="social-icon">in</span> LinkedIn
-          </button>
-          <button type="button" className="social-button">
-            <span className="social-icon">f</span> Facebook
-          </button>
+        <span className="social-text">Or with</span>
+        <hr className="divider" />
+      </div>
+      <div className="social-buttons">
+        {/* LinkedIn Button */}
+        <button type="button" className="social-button linkedin">
+            <FontAwesomeIcon icon={['fab', 'linkedin-in']} className="social-icon" />
+            LinkedIn
+        </button>
+
+        {/* Facebook Button */}
+        <button type="button" className="social-button facebook">
+            <FontAwesomeIcon icon={['fab', 'facebook-f']} className="social-icon" />
+            Facebook
+        </button>
         </div>
       </div>
       <p className="login-link">
         Already have an account? <a href="/login" className="login-button">Login</a>
       </p>
+      
     </div>
   );
 }
