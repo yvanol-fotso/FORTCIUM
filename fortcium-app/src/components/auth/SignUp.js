@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import './SignUp.css'; // Import the CSS file
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
+import { faFacebook } from '@fortawesome/free-brands-svg-icons';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 
 
@@ -40,8 +41,8 @@ function SignUp() {
       <label className="sign-up-subheading">Connect with your friends today!</label>
       <div className="logo-container">
         {/* You would replace this with your actual logo component or image */}
-        <div className="logo">
-            <img src='/img12.jpeg' alt='img'/>
+        <div >
+            <img src='/img12.jpeg' alt='img' className="logo"/>
         </div>
       </div>
       <form onSubmit={handleSubmit} className="sign-up-form">
@@ -108,18 +109,17 @@ function SignUp() {
         <hr className="divider" />
       </div>
       <div className="social-buttons">
-        {/* LinkedIn Button */}
-        <button type="button" className="social-button linkedin">
-            <FontAwesomeIcon icon={['fab', 'linkedin-in']} className="social-icon" />
-            LinkedIn
-        </button>
-
-        {/* Facebook Button */}
-        <button type="button" className="social-button facebook">
-            <FontAwesomeIcon icon={['fab', 'facebook-f']} className="social-icon" />
-            Facebook
-        </button>
-        </div>
+              {/* LinkedIn Button */}
+              <button type="button" className="social-button ">
+                 <FontAwesomeIcon icon={faLinkedin} className=" linkedin"/>
+                  LinkedIn
+              </button>
+      
+              {/* Facebook Button */}
+              <button type="button" className="social-button">
+              <FontAwesomeIcon icon={faFacebook}  className='facebook'/>    Facebook
+              </button>
+              </div>
       </div>
       <p className="login-link">
         Already have an account? <a href="/login" className="login-button">Login</a>
